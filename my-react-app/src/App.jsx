@@ -64,9 +64,11 @@ export default App
 
 */
 
+import List from './List.jsx'
 
-function App(){
-
+function App() {
+  return (<List />)
 }
+
 
 export default App
