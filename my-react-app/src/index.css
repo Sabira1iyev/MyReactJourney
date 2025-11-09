@@ -1,18 +1,23 @@
-.welcome-message {
+.list-category {
     font-size: 2.5em;
-    background-color: green;
-    color: white;
-    padding: 10px;
+    font-weight: bold;
+    color: gray;
+    margin-bottom: 10px;
+    text-align: center;
+    border: 3px solid;
     border-radius: 5px;
+    background-color: aqua;
+}
+
+.listItems li {
+    font-size: 2em;
+    list-style: none;
+    color: gray;
+    text-align: center;
     margin: 0;
 }
 
-
-.login-prompt {
-    font-size: 2.5em;
-    background-color: red;
-    color: white;
-    padding: 10px;
-    border-radius: 5px;
-    margin: 0;
+.listItems li:hover {
+    color: red;
+    cursor: pointer;
 }
