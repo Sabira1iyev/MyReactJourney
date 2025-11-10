@@ -62,7 +62,7 @@ function App() {
 
 export default App
 
-*/
+------------------------------------------------
 
 import List from './List.jsx'
 
@@ -90,3 +90,20 @@ function App() {
 
 
 export default App
+
+
+*/
+      import Button from './Button.jsx'
+      import ProfilePicture from './ProfilePicture.jsx'
+// click event = An interaction when a user clicks o a specific element,
+              // We can respond to clicks by passing
+              // a callback to the onClick handler.
+
+
+function App(){
+
+return(<ProfilePicture/>)
+}
+
+export default App
+
