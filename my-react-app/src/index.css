@@ -17,7 +17,7 @@
     margin: 0;
 }
 
-.listItems li:hover {
+.list-items li:hover {
     color: red;
     cursor: pointer;
 }
