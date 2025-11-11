@@ -92,7 +92,8 @@ function App() {
 export default App
 
 
-*/
+----------------------------
+                                 Click event
       import Button from './Button.jsx'
       import ProfilePicture from './ProfilePicture.jsx'
 // click event = An interaction when a user clicks o a specific element,
@@ -107,3 +108,16 @@ return(<ProfilePicture/>)
 
 export default App
 
+
+*/
+
+
+import myComponent from "./myComponent";
+
+function App(){
+
+  return(<myComponent/>);
+
+}
+
+export default App
