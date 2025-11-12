@@ -111,13 +111,11 @@ export default App
 
 */
 
-
-import myComponent from "./myComponent";
-
+import Counter from './Counter.jsx';
+ 
 function App(){
 
-  return(<myComponent/>);
-
+  return(<Counter/>);
 }
 
 export default App
