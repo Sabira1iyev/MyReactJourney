@@ -111,11 +111,10 @@ export default App
 
 */
 
-import Counter from './Counter.jsx';
- 
+import ColorPicker from './ColorPicker.jsx';
 function App(){
 
-  return(<Counter/>);
+  return(<ColorPicker/>);
 }
 
 export default App
