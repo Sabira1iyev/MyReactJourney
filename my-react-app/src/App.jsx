@@ -111,10 +111,10 @@ export default App
 
 */
 
-import ColorPicker from './ColorPicker.jsx';
+import MyComponent from './lesson/MyComponent.jsx';
 function App(){
 
-  return(<ColorPicker/>);
+  return(<MyComponent/>);
 }
 
 export default App
