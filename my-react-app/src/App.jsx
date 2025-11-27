@@ -111,10 +111,10 @@ export default App
 
 */
 
-import MyComponent from './lesson/MyComponent.jsx';
+import ToDoList from './ToDoList.jsx';
 function App(){
 
-  return(<MyComponent/>);
+  return(<ToDoList/>);
 }
 
 export default App
