@@ -258,69 +258,134 @@
 // export default MyComponent
 
 
-import React, { useState, useEffect } from 'react';
+// import React, { useState, useEffect } from 'react';
+
+// function MyComponent() {
+
+//     // const [count, setCount] = useState(0);
+//     // const [color, setColor] = useState("green");
+
+
+
+//     // useEffect(() => {
+//     //     document.title = `Count: ${count} ${color}`;
+//     // }, [count, color]);
+
+
+//     // function addCount() {
+//     //     setCount(c => c + 1);
+//     // }
+
+//     // function subtractCount() {
+//     //     setCount(c => c - 1);
+//     // }
+
+//     // function changeColor(){
+//     //     setColor(c =>c === "green" ? "red" : "green");
+//     // }
+
+
+
+//     // return (
+//     //     <>
+//     //         <p style={{color:color}}> Count:{count}</p>
+//     //         <button onClick={addCount}>add</button>
+//     //         <button onClick={subtractCount}>subtract</button><br />
+//     //         <button onClick={changeColor}>change the color</button>
+//     //     </>
+//     // )
+
+//     const [width, setWidth] = useState(window.innerWidth);
+//     const [height, setHeight] = useState(window.innerHeight);
+//     useEffect(() => {
+//     window.addEventListener("resize", handleResize);
+//     console.log("EVENT LISTENER ADDED");
+
+//     return () =>{
+//         window.removeEventListener("resize", handleResize);
+//         console.log("EVENT LISTENER REMOVED");
+//     }
+//     }, []);
+
+//     useEffect(() =>{
+//         document.title = `Size ${width} x ${height}`;
+//     }, [width, height]);
+
+//     function handleResize(){
+//         setWidth(window.innerWidth);
+//         setHeight(window.innerHeight);
+//     }
+
+//     return(<>
+
+//         <p>Window Width: {width}</p>
+//         <p>Window heigh: {height}</p>
+//     </>)
+
+// }
+// export default MyComponent
+
+
+// useRef
+
+
+import React, { useState, useEffect, useRef } from 'react';
 
 function MyComponent() {
 
-    // const [count, setCount] = useState(0);
-    // const [color, setColor] = useState("green");
+    const inputRef1 = useRef(null);
+    const inputRef2 = useRef(null);
+    const inputRef3 = useRef(null);
 
 
-
-    // useEffect(() => {
-    //     document.title = `Count: ${count} ${color}`;
-    // }, [count, color]);
-
-
-    // function addCount() {
-    //     setCount(c => c + 1);
-    // }
-
-    // function subtractCount() {
-    //     setCount(c => c - 1);
-    // }
-
-    // function changeColor(){
-    //     setColor(c =>c === "green" ? "red" : "green");
-    // }
-
-
-
-    // return (
-    //     <>
-    //         <p style={{color:color}}> Count:{count}</p>
-    //         <button onClick={addCount}>add</button>
-    //         <button onClick={subtractCount}>subtract</button><br />
-    //         <button onClick={changeColor}>change the color</button>
-    //     </>
-    // )
-
-    const [width, setWidth] = useState(window.innerWidth);
-    const [height, setHeight] = useState(window.innerHeight);
     useEffect(() => {
-    window.addEventListener("resize", handleResize);
-    console.log("EVENT LISTENER ADDED");
+        console.log("COMPONENT RENDERED");
+    });
 
-    return () =>{
-        window.removeEventListener("resize", handleResize);
-        console.log("EVENT LISTENER REMOVED");
-    }
-    }, []);
+    function handleClick1() {
+        inputRef1.current.focus();
+        inputRef1.current.style.backgroundColor = "yellow";
+        inputRef2.current.style.backgroundColor = "";
+        inputRef3.current.style.backgroundColor = "";
 
-    useEffect(() =>{
-        document.title = `Size ${width} x ${height}`;
-    }, [width, height]);
 
-    function handleResize(){
-        setWidth(window.innerWidth);
-        setHeight(window.innerHeight);
     }
 
-    return(<>
-    
-        <p>Window Width: {width}</p>
-        <p>Window heigh: {height}</p>
-    </>)
- 
+    function handleClick2() {
+        inputRef2.current.focus();
+        inputRef1.current.style.backgroundColor = "";
+        inputRef2.current.style.backgroundColor = "yellow";
+        inputRef3.current.style.backgroundColor = "";
+
+    }
+
+    function handleClick3() {
+        inputRef3.current.focus();
+        inputRef1.current.style.backgroundColor = "";
+        inputRef2.current.style.backgroundColor = "";
+        inputRef3.current.style.backgroundColor = "yellow";
+
+    }
+
+    return (
+        <div>
+            <button onClick={handleClick1}>
+                click me 1
+            </button>
+            <input ref={inputRef1} />
+
+            <button onClick={handleClick2}>
+                click me 2
+            </button>
+            <input ref={inputRef2} />
+
+            <button onClick={handleClick3}>
+                click me 3
+            </button>
+            <input ref={inputRef3} />
+
+        </div>
+    )
 }
-export default MyComponent
+
+export default MyComponent;

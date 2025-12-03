@@ -111,11 +111,12 @@ export default App
 
 */
 
-import ComponentA from './ComponentA.jsx';
+import StopWatch from './StopWatch.jsx';
 import React from 'react';
 
+
 function App() {
-  return (<ComponentA />);
+  return (<StopWatch />);
 }
 
-export default ComponentA
+export default StopWatch
