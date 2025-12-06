@@ -111,12 +111,19 @@ export default App
 
 */
 
-import StopWatch from './StopWatch.jsx';
-import React from 'react';
+import Nicat from './Nicat';
+import React, { useState } from 'react';
 
 
 function App() {
-  return (<StopWatch />);
+  const [show, setShow] = useState(false);
+
+  return (
+    <>
+      {show && <Nicat />}
+      <input type='checkbox' checked={show} onChange={(event) => setShow(event.target.checked)} />
+    </>
+  )
 }
 
-export default StopWatch
+export default App
