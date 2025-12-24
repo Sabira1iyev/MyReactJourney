@@ -1,5 +1,7 @@
 import { useState } from "react";
 import "./App.css";
+import Angular from './images/angular-feature-image-1-1024x512.png';
+
 
 import Course from "./Course.jsx";
 
