@@ -6,7 +6,7 @@ function getRandomCourse() {
   const courseArray = ["Angular", "React", "Vue", "Javascript"];
   return courseArray[Math.floor(Math.random() * courseArray.length)];
 }
-
+ 
 function App() {
   const [courses, setCourses] = useState([]);
 
@@ -19,10 +19,10 @@ function App() {
   });
 
   return (
-    <>
-      <button onClick={handleClick}>Kurs ekle</button>
-      <div>{courseList}</div>
-    </>
+    <div className="App">
+      <button className="appButton" onClick={handleClick}>Kurs ekle</button>
+      <div className="courseList">{courseList}</div>
+    </div>
   );
 }
 
