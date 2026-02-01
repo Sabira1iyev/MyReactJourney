@@ -1,0 +1,30 @@
+form {
+  display: flex;
+  flex-direction: column;
+  padding: 5px;
+  border: 1px solid gray;
+  border-radius: 8px;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+form input {
+  border-radius: 12px;
+  border: 1px solid rgba(167, 205, 255, 0.507);
+  width: 50%;
+  display: flex;
+  text-align: center;
+}
+
+.imageList {
+  columns: 250px 5;
+  column-gap: 10px;
+  margin-top: 20px;
+}
+
+.imageListImg {
+  width: 100%;
+  border-radius: 12px;
+  margin-bottom: 10px;
+}
