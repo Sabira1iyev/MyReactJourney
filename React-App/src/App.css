@@ -33,4 +33,10 @@
     background-color: green;
     color: white;
     font-size: 20px;
+    cursor: pointer;
+    transition: .5s ease-in-out;
+}
+
+.task-button:hover{
+    transform: scale(1.06);
 }
