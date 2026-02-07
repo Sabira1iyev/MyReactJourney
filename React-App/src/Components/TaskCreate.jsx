@@ -1,9 +1,9 @@
 import { useState } from "react";
 
-function TaskCreate({ onCreate }) {
+function TaskCreate({ onCreate, task, taskformUpdate, onUpdate }) {
 
-    const [title, setTitle] = useState('');
-    const [taskDesc, setTaskDesc] = useState('');
+    const [title, setTitle] = useState(task ? task.title : '');
+    const [taskDesc, setTaskDesc] = useState(task ? task.taskDesc : '');
 
     const handleChange = (event) => {
         setTitle(event.target.value);
@@ -11,28 +11,47 @@ function TaskCreate({ onCreate }) {
 
     const handleTaskChange = (event) => {
         setTaskDesc(event.target.value);
-  
+
     }
 
     const handleSubmit = (event) => {
         event.preventDefault();
-        onCreate(title, taskDesc);
+        if (taskformUpdate) {
+            onUpdate(task.id, title, taskDesc)
+        }
+        else {
+            onCreate(title, taskDesc);
+        }
+
         setTitle('');
         setTaskDesc('');
     };
 
     return (
-        <div className="task-create">
 
-            <h3>Lutfen task ekleyiniz</h3>
-            <form className="task-form" onSubmit={handleSubmit}>
-                <label className="task-label">Baslik</label>
-                <input value={title} onChange={handleChange} className="task-input" />
-                <label className="task-label">Task girin</label>
-                <textarea value={taskDesc} onChange={handleTaskChange} className="task-input" rows={5} />
-                <button className="task-button" onClick={handleSubmit}>Olustur</button>
-            </form>
-        </div>
+        <div>{taskformUpdate ? (
+            <div className="task-update">
+                <h3>Lutfen tasku duzenleyiniz</h3>
+                <form className="task-form" onSubmit={handleSubmit}>
+                    <label className="task-label">Basligi duzenleyiniz</label>
+                    <input value={title} onChange={handleChange} className="task-input" />
+                    <label className="task-label">Taski duzenleyiniz</label>
+                    <textarea value={taskDesc} onChange={handleTaskChange} className="task-input" rows={5} />
+                    <button className="task-button update-button" onClick={handleSubmit}>Duzenle</button>
+                </form>
+            </div>) : (
+            <div className="task-create">
+                <h3>Lutfen task ekleyiniz</h3>
+                <form className="task-form" onSubmit={handleSubmit}>
+                    <label className="task-label">Baslik</label>
+                    <input value={title} onChange={handleChange} className="task-input" />
+                    <label className="task-label">Task girin</label>
+                    <textarea value={taskDesc} onChange={handleTaskChange} className="task-input" rows={5} />
+                    <button className="task-button" onClick={handleSubmit}>Olustur</button>
+                </form>
+            </div>)}</div>
+
+
     )
 
 }

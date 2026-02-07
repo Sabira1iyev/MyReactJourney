@@ -14,14 +14,32 @@ function App() {
       }
     ];
 
-    setTasks(createTask);
+    setTasks(createdTasks);
+  };
+
+
+  const deleteTaskById = (id) => {
+    const afterDeletingTasks = tasks.filter((task) => {
+      return task.id !== id;
+    });
+    setTasks(afterDeletingTasks);
+  };
+
+  const editTaskById = (id, updatedTitle, updatedTeskDesc) => {
+      const UpdatedTask = tasks.map((task) =>{
+        if(task.id === id){
+          return {id,title:updatedTitle, taskDesc:updatedTeskDesc}
+        }
+        return task;
+      });
+      setTasks(UpdatedTask);
   };
 
   return (
     <div className='App'>
       <TaskCreate onCreate={createTask} />
       <h1>Gorevler</h1>
-      <TaskList tasks={tasks} />
+      <TaskList tasks={tasks} onDelete={deleteTaskById} onUpdate={editTaskById} />
     </div>
   )
 }
