@@ -1,4 +1,4 @@
-import Message from './Message'
+import ListGroup from './componenets/ListGroup'
 
 // import { useState } from 'react'
 
@@ -9,9 +9,9 @@ function App() {
 
   return (
     <>
-      <Message />
+      <ListGroup/>
     </>
-  )
+  ) 
 }
 
 export default App

@@ -14,6 +14,6 @@ function Message() {
             <h1>Hello {getName()}</h1>
         </>
     )
-}
+} 
 
 export default Message;
