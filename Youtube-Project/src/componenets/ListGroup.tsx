@@ -1,10 +1,19 @@
 // import { Fragment } from 'react';
 // import type { MouseEvent } from "react";
 
+interface Props {
+  items: string[];
+  heading: string;
+  onSelectItem: (item: string) => void;
+
+}
+
+
 import { useState } from "react";
 
-function ListGroup() {
-  let items = ["New York", "San Fransisco", "Tokyo", "London", "Paris"];
+
+
+function ListGroup({ items, heading, onSelectItem }: Props) {
 
   // const message = items.length === 0 ? <p>No item found</p> : null
 
@@ -21,7 +30,7 @@ function ListGroup() {
 
   return (
     <>
-      <h1>List</h1>
+      <h1>{heading}</h1>
       {/* {items.length === 0 ? <p>No item found</p> : null} */}
 
       {items.length === 0 && <p>No item found</p>}
@@ -34,7 +43,10 @@ function ListGroup() {
                 : "list-group-item"
             }
             key={item}
-            onClick={() => {setselectedIndex(index);}}
+            onClick={() => {
+              setselectedIndex(index);
+              onSelectItem(item);
+            }}
           >
             {item}
           </li>
