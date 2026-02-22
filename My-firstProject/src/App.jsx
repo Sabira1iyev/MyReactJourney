@@ -1,15 +1,17 @@
 import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
 import './App.css'
+import Card from './Card'
 
 function App() {
   const [count, setCount] = useState(0)
 
-  return ( 
+  return (
     <>
-      
- 
+      <div className="card-container">
+        <Card title="Star wars" rating={5} isCool={true} />
+        <Card title="Avatar" />
+        <Card title="The Lion King" />
+      </div>
     </>
   )
 }
