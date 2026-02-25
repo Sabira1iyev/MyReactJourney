@@ -22,11 +22,15 @@ import './App.css'
 // }
 
 
-const Mesage = () => {
+const Mesage = (props) => {
+
+  const { color, text } = props;
+
   return (
     <div>
+ 
+ 
 
-      i am messsage
     </div>
   )
 }
@@ -38,8 +42,12 @@ function App() {
 
   return (
     <>
-      todo
-      <Mesage />
+
+      <Mesage text="this is my first prop"
+        color="red"
+
+      />
+
     </>
   )
 }
