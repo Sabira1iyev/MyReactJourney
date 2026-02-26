@@ -9,7 +9,7 @@
   color: white;
 }
 
-#root{
+#root {
   width: 100%;
   display: flex;
   flex-direction: column;
@@ -17,41 +17,64 @@
   align-items: center;
 }
 
-body{
+body {
   width: 100%;
   width: auto;
-  background-color: #001277;
+  background-color: #13237c;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
 }
 
-.header-container-mobile{
+.header-container-mobile {
   width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 40px;
+  gap: 20px;
 }
 
-.my-name{
-  width: 100%;
-  text-align: center;
-  margin-top: 10px;
-}
-
-.menu-section{
+.header-content {
   width: 80%;
-  background-color: black;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 20px 0;
+}
+
+.header-content h3 {
+  width: 100%;
+  text-align: left;
+  font-size: 18px;
+}
+
+.header-content .menu-button {
+  text-decoration: none;
+  font-size: 24px;
+  display: block;
+}
+
+.header-content .close-button {
+  text-decoration: none;
+  font-size: 28px;
+  display: none;
+}
+
+.menu-section {
+  width: 80%;
+  padding: 20px 0;
+  background: linear-gradient(to right, #2da0bd, #0a2a88);
+  border: 1px solid rgba(24, 112, 170, 0.582);
   display: flex;
   flex-direction: column;
   align-items: center;
   text-align: center;
   gap: 20px;
+  border-radius: 18px;
 }
 
-.menu-section a{
+.menu-section a {
   text-decoration: none;
 }
