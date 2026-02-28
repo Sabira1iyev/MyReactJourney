@@ -1,31 +1,48 @@
+import { useState } from "react";
+
 function Header() {
+  const [isOpen, setIsOpen] = useState(false);
 
+  const handleMenuClick = (element) => {
+    element.preventDefault();
+    console.log("clicked");
+    setIsOpen(true);
+  };
 
-const handleMenuClick = (element) =>{
-        element.preventDefault();
-        console.log("clicked");
-        
+  const handleCloseClick = (element) => {
+    element.preventDefault();
+    console.log("clicked close button");
+    setIsOpen(false);
+  };
+
+  return (
+    <>
+      <header className="header-container-mobile">
+        <div className="header-content">
+          <h3>SABIR ALIYEV</h3>
+
+          {!isOpen && (
+            <a href="#" className="menu-button" onClick={handleMenuClick}>
+              <i className="ri-menu-line"></i>
+            </a>
+          )}
+
+          {isOpen && (
+            <a href="#" className="close-button" onClick={handleCloseClick}>
+              <i className="ri-close-line"></i>
+            </a>
+          )}
+        </div>
+        <nav className={`menu-section ${isOpen ? "active" : ""}`}>
+          <a href="#">Home</a>
+          <a href="#">Skills</a>
+          <a href="#">About</a>
+          <a href="#">Active Projects</a>
+          <a href="#">Contact</a>
+        </nav>
+      </header>
+    </>
+  );
 }
 
-
-    return (
-        <>
-            <header className="header-container-mobile">
-                <div className="header-content">
-                    <h3>SABIR ALIYEV</h3>
-                    <a href="#" className="menu-button" onClick={handleMenuClick}><i className="ri-menu-line"></i></a>
-                    <a href="#" className="close-button"><i className="ri-close-line"></i></a>
-                </div>
-                <nav className="menu-section">
-                    <a href="#">Home</a>
-                    <a href="#">Skills</a>
-                    <a href="#">About</a>
-                    <a href="#">Active Projects</a>
-                    <a href="#">Contact</a>
-                </nav>
-            </header>
-        </>
-    )
-}
-
-export default Header
+export default Header;

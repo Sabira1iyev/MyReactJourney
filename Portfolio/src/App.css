@@ -59,7 +59,6 @@ body {
 .header-content .close-button {
   text-decoration: none;
   font-size: 28px;
-  display: none;
 }
 
 .menu-section {
@@ -73,6 +72,11 @@ body {
   text-align: center;
   gap: 20px;
   border-radius: 18px;
+  display: none;
+}
+
+.menu-section.active{
+  display: flex;
 }
 
 .menu-section a {
