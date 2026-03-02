@@ -186,13 +186,30 @@ import MyComponent from "./MyComponent";
 // export default App
 
 
-import FancyButton from "./FancyButton";
+// import FancyButton from "./FancyButton";
+
+// const App = () => {
+//   return (
+//     <div className="p-3">
+//       <FancyButton style={true}>Click me</FancyButton>
+//       <FancyButton style={false}>Get</FancyButton>
+//     </div>
+//   )
+// }
+
+// export default App
+
+
+//   Flex-Column
+
+import React from 'react'
+
+import FlexCol from "./FlexCol";
 
 const App = () => {
   return (
-    <div className="p-3">
-      <FancyButton style={true}>Click me</FancyButton>
-      <FancyButton style={false}>Get</FancyButton>
+    <div>
+      <FlexCol/>
     </div>
   )
 }
