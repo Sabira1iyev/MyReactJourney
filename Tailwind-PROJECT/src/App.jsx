@@ -202,14 +202,65 @@ import MyComponent from "./MyComponent";
 
 //   Flex-Column
 
-import React from 'react'
+// import React from 'react'
 
-import FlexCol from "./FlexCol";
+// import FlexCol from "./FlexCol";
+
+// const App = () => {
+//   return (
+//     <div>
+//       <FlexCol/>
+//     </div>
+//   )
+// }
+
+// export default App
+
+
+// Tailwind Docs
+
+// import React from 'react'
+
+// import Docs from "./Docs";
+// const App = () => {
+//   return (
+//     <div>
+//       <Docs />
+//     </div>
+//   )
+// }
+
+// export default App
+
+
+// Layout exercise
+
+import Layout from "./Layout";
+
+const quote1 = {
+  text: "One of my most productive days was throwing away 1000 lines of code.",
+  author: "Ken Thompson",
+  bio: "Designer of unix Operating system",
+};
+
+const quote2 = {
+  text: "A ship in port is safe but tha's not what ships are built for.",
+  author: "Admiral Grace Hopper",
+  bio: "Inventor of Programming Compilers",
+};
+
+const quote3 = {
+  text: "If you optimize everything, you will always be unhappy.",
+  author: "Donald Knuth",
+  bio: "Pionner of Algorithm Analysis",
+};
+
+
 
 const App = () => {
   return (
-    <div>
-      <FlexCol/>
+    <div className="flex justify-center">
+      <Layout quote={quote1} />
     </div>
   )
 }
