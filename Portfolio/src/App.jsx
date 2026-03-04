@@ -12,9 +12,9 @@ function App() {
 using namespace std;
 
 int main() {
-  cout << "Hello world!"
+  cout << "Hello world!";
 	string code = " Portfolio loaded... " ;
-	  for (char c : code) {
+	  for ( char c : code ) {
 		    cout << c << " ";
 	}
 	return 0;

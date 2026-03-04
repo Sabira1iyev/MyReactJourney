@@ -4,15 +4,15 @@ import { useEffect, useState } from "react";
 function Home({ codeContent }) {
 
   const [text, setText] = useState("");
-useEffect(() => {
-  let index = 0;
-  const interval = setInterval(() => {
-    setText(codeContent.slice(0, index));
-    index++;
-    if (index > codeContent.length) clearInterval(interval);
-  }, 30);
-  return () => clearInterval(interval);
-}, [codeContent])
+  useEffect(() => {
+    let index = 0;
+    const interval = setInterval(() => {
+      setText(codeContent.slice(0, index));
+      index++;
+      if (index > codeContent.length) clearInterval(interval);
+    }, 30);
+    return () => clearInterval(interval);
+  }, [codeContent])
 
   return (
     <>
@@ -25,9 +25,12 @@ useEffect(() => {
           </pre>
         </div>
         <div className="home-content">
-          <h2 className="my-name">
-            HI, <span>SABIR</span> IS HERE
-          </h2>
+          <div className="name-container">
+            <h2 className="my-name">
+              HI, <span>SABIR</span> IS HERE
+            </h2>
+          </div>
+
           <p>
             Software Engineer focused on secure and scalable systems.
             Passionate about clean code and continuous learning.
