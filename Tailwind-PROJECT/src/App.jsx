@@ -236,6 +236,9 @@ import MyComponent from "./MyComponent";
 // Layout exercise
 
 import Layout from "./Layout";
+import Layout2 from "./Layout2";
+import Layout3 from "./Layout3";
+
 
 const quote1 = {
   text: "One of my most productive days was throwing away 1000 lines of code.",
@@ -259,8 +262,10 @@ const quote3 = {
 
 const App = () => {
   return (
-    <div className="flex justify-center">
+    <div className="flex  flex-col items-center">
       <Layout quote={quote1} />
+      <Layout2 quote={quote2} />
+      <Layout3 quote={quote3} />
     </div>
   )
 }
