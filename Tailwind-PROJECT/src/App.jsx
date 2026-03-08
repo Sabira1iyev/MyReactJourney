@@ -235,37 +235,40 @@ import MyComponent from "./MyComponent";
 
 // Layout exercise
 
-import Layout from "./Layout";
-import Layout2 from "./Layout2";
-import Layout3 from "./Layout3";
+// import Layout from "./Layout";
+// import Layout2 from "./Layout2";
+// import Layout3 from "./Layout3";
 
 
-const quote1 = {
-  text: "One of my most productive days was throwing away 1000 lines of code.",
-  author: "Ken Thompson",
-  bio: "Designer of unix Operating system",
-};
+// const quote1 = {
+//   text: "One of my most productive days was throwing away 1000 lines of code.",
+//   author: "Ken Thompson",
+//   bio: "Designer of unix Operating system",
+// };
 
-const quote2 = {
-  text: "A ship in port is safe but tha's not what ships are built for.",
-  author: "Admiral Grace Hopper",
-  bio: "Inventor of Programming Compilers",
-};
+// const quote2 = {
+//   text: "A ship in port is safe but tha's not what ships are built for.",
+//   author: "Admiral Grace Hopper",
+//   bio: "Inventor of Programming Compilers",
+// };
 
-const quote3 = {
-  text: "If you optimize everything, you will always be unhappy.",
-  author: "Donald Knuth",
-  bio: "Pionner of Algorithm Analysis",
-};
+// const quote3 = {
+//   text: "If you optimize everything, you will always be unhappy.",
+//   author: "Donald Knuth",
+//   bio: "Pionner of Algorithm Analysis",
+// };
 
 
+import Header from "./Header";
+import Search from "./Search";
+import Footer from "./Footer";
 
 const App = () => {
   return (
-    <div className="flex  flex-col items-center">
-      <Layout quote={quote1} />
-      <Layout2 quote={quote2} />
-      <Layout3 quote={quote3} />
+    <div className="h-screen flex flex-col">
+      <Header />
+      <Search/>
+      <Footer/>
     </div>
   )
 }
