@@ -1,5 +1,7 @@
 import Header from './Header'
 import Home from './Home'
+import About from './About'
+import Skills from './Skills'
 import { useState } from 'react'
 
 import './App.css'
@@ -25,6 +27,8 @@ int main() {
     <>
       <Header />
       <Home codeContent={cppCode} />
+      <Skills />
+      <About />
     </>
   )
 }

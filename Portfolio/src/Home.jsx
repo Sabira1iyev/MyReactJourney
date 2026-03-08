@@ -30,14 +30,14 @@ function Home({ codeContent }) {
               HI, <span>SABIR</span> IS HERE
             </h2>
           </div>
-
+ 
           <p>
             Software Engineer focused on secure and scalable systems.
             Passionate about clean code and continuous learning.
           </p>
         </div>
         <button
-          className="bg-blue-600 text-white rounded-full w-40 h-12 flex justify-center items-center"
+          className="sayHi-button bg-blue-600 text-white rounded-full w-40 h-12 flex justify-center items-center"
           onClick={() => {
             window.location.href = "mailto:s.aliyev2005@gmail.com";
           }}

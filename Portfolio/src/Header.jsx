@@ -35,10 +35,9 @@ function Header() {
         </div>
         <nav className={`menu-section ${isOpen ? "active" : ""}`}>
           <a href="#">Home</a>
-          <a href="#">Skills</a>
           <a href="#">About</a>
-          <a href="#">Active Projects</a>
-          <a href="#">Contact</a>
+          <a href="#">Skills</a>
+          <a href="#">Projects</a>
         </nav>
       </header>
     </>
