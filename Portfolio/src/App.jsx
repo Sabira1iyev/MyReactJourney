@@ -1,13 +1,13 @@
-import Header from './Header'
-import Home from './Home'
-import About from './About'
-import Skills from './Skills'
-import { useState } from 'react'
+import Header from "./Header";
+import Home from "./Home";
+import About from "./About";
+import Skills from "./Skills";
+import { useState } from "react";
 
-import './App.css'
+import "./App.css";
 
 function App() {
-  const [count, setCount] = useState(0)
+  const [count, setCount] = useState(0);
 
   const cppCode = `
 #include <iostream>
@@ -21,16 +21,16 @@ int main() {
 	}
 	return 0;
 }
-  `
+  `;
 
   return (
     <>
       <Header />
       <Home codeContent={cppCode} />
-      <Skills />
       <About />
+      <Skills />
     </>
-  )
+  );
 }
 
-export default App 
+export default App;
