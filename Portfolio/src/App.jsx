@@ -24,12 +24,12 @@ int main() {
   `;
 
   return (
-    <>
+    <div className="bg-blue-900">
       <Header />
       <Home codeContent={cppCode} />
       <About />
       <Skills />
-    </>
+    </div>
   );
 }
 

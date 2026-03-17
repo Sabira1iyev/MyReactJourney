@@ -17,8 +17,8 @@ function Header() {
 
   return (
     <>
-      <header className="header-container-mobile">
-        <div className="header-content">
+      <header className="w-full flex flex-col justify-center items-center gap-5">
+        <div className="w-4/5 flex justify-between items-center py-5">
           <h3>SABIR ALIYEV</h3>
 
           {!isOpen && (
@@ -33,7 +33,10 @@ function Header() {
             </a>
           )}
         </div>
-        <nav className={`menu-section ${isOpen ? "active" : ""}`}>
+        <nav className={` w-4/5 py-5 bg-gradient-to-r from-[#2d2fbd] to-[#0a2a88] 
+     border border-[#1870aa94] flex flex-col items-center text-center gap-5 
+     rounded-[18px] absolute top-20 z-[100]
+            ${isOpen ? "flex" : "hidden"}`}>
           <a href="#">Home</a>
           <a href="#">About</a>
           <a href="#">Skills</a>

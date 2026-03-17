@@ -16,21 +16,24 @@ function Home({ codeContent }) {
 
   return (
     <>
-      <div className="home-container">
-        <div className="code-content">
-          <pre>
-            <code>
+      <div className="w-full mt-[50px] flex justify-center items-center
+      flex-col p-5 gap-[50px]">
+        <div className="flex items-center justify-center bg-transparent rounded-[18px]
+        px-5 border border-[#81818175] shadow-[10px_5px_50px_#0c3ddd]">
+          <pre className="w-full overflow-x-auto text-sm">
+            <code className="whitespace-pre-wrap break-all">
               {text}
             </code>
           </pre>
         </div>
-        <div className="home-content">
+        <div className="w-full flex flex-col gap-5 justify-center items-center
+        text-center text-lg leading-[35px] font-bold">
           <div className="name-container">
-            <h2 className="my-name">
-              HI, <span>SABIR</span> IS HERE
+            <h2 className="text-2xl">
+              HI, <span className="text-blue-500">SABIR</span> IS HERE
             </h2>
           </div>
- 
+
           <p>
             Software Engineer focused on secure and scalable systems.
             Passionate about clean code and continuous learning.
