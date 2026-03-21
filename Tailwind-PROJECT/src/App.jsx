@@ -259,16 +259,50 @@ import MyComponent from "./MyComponent";
 // };
 
 
-import Header from "./Header";
-import Search from "./Search";
-import Footer from "./Footer";
+// import Header from "./Header";
+// import Search from "./Search";
+// import Footer from "./Footer";
+
+// const App = () => {
+//   return (
+//     <div className="h-screen flex flex-col">
+//       <Header />
+//       <Search/>
+//       <Footer/>
+//     </div>
+//   )
+// }
+
+// export default App
+
+import { useState } from "react";
+import React from 'react'
 
 const App = () => {
+
+  const [message, setMessage] = useState("sabir was here")
+
+  const changeMessage = (buttonText) => {
+    if (buttonText === "one") {
+      setMessage("clicked one")
+    }
+    else if (buttonText === "two") {
+      setMessage("clicked two")
+    }
+    else if (buttonText === "three") {
+      setMessage("clicked three");
+    }
+  }
+
   return (
-    <div className="h-screen flex flex-col">
-      <Header />
-      <Search/>
-      <Footer/>
+    <div className="flex flex-col items-center justify-center border-2 border-black
+    h-screen">
+      <div className="text-3xl text-stone-400">{message}</div>
+      <div className="mt-4">
+        <button className="m-2 px-4 py-2 text-white bg-green-400 rounded-md cursor-pointer" onClick={() => changeMessage("one")}>One</button>
+        <button className="m-2 px-4 py-2 text-white bg-red-400 rounded-md cursor-pointer" onClick={() => changeMessage("two")}>Two</button>
+        <button className="m-2 px-4 py-2 text-white bg-violet-400 rounded-md cursor-pointer" onClick={() => changeMessage("three")}>Three</button>
+      </div>
     </div>
   )
 }
