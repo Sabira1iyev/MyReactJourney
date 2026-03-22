@@ -115,7 +115,7 @@ import MyComponent from "./MyComponent";
 // const App = () => {
 //   return (
 //     <div>
-//       {/* 
+//       {/*
 //       <div className="text-rose-300 bg-red-500">one</div>
 //       <div className="text-slate-300 border-2 border-slate-600">two</div>
 //       <div className="text-2xl bg-emerald-200 text-blue-600">three</div>
@@ -275,34 +275,51 @@ import MyComponent from "./MyComponent";
 
 // export default App
 
-import { useState } from "react";
-import React from 'react'
+
+// Click event exercise
+// import { useState } from "react";
+// import React from 'react'
+
+// const App = () => {
+
+//   const [message, setMessage] = useState("sabir was here")
+
+//   const changeMessage = (buttonText) => {
+//     if (buttonText === "one") {
+//       setMessage("clicked one")
+//     }
+//     else if (buttonText === "two") {
+//       setMessage("clicked two")
+//     }
+//     else if (buttonText === "three") {
+//       setMessage("clicked three");
+//     }
+//   }
+
+//   return (
+//     <div className="flex flex-col items-center justify-center border-2 border-black
+//     h-screen">
+//       <div className="text-3xl text-stone-400">{message}</div>
+//       <div className="mt-4">
+//         <button className="m-2 px-4 py-2 text-white bg-green-400 rounded-md cursor-pointer" onClick={() => changeMessage("one")}>One</button>
+//         <button className="m-2 px-4 py-2 text-white bg-red-400 rounded-md cursor-pointer" onClick={() => changeMessage("two")}>Two</button>
+//         <button className="m-2 px-4 py-2 text-white bg-violet-400 rounded-md cursor-pointer" onClick={() => changeMessage("three")}>Three</button>
+//       </div>
+//     </div>
+//   )
+// }
+
+// export default App
+
+
+import Widget1 from "./Widget1";
+import Widget2 from "./Widget2";
 
 const App = () => {
-
-  const [message, setMessage] = useState("sabir was here")
-
-  const changeMessage = (buttonText) => {
-    if (buttonText === "one") {
-      setMessage("clicked one")
-    }
-    else if (buttonText === "two") {
-      setMessage("clicked two")
-    }
-    else if (buttonText === "three") {
-      setMessage("clicked three");
-    }
-  }
-
   return (
-    <div className="flex flex-col items-center justify-center border-2 border-black
-    h-screen">
-      <div className="text-3xl text-stone-400">{message}</div>
-      <div className="mt-4">
-        <button className="m-2 px-4 py-2 text-white bg-green-400 rounded-md cursor-pointer" onClick={() => changeMessage("one")}>One</button>
-        <button className="m-2 px-4 py-2 text-white bg-red-400 rounded-md cursor-pointer" onClick={() => changeMessage("two")}>Two</button>
-        <button className="m-2 px-4 py-2 text-white bg-violet-400 rounded-md cursor-pointer" onClick={() => changeMessage("three")}>Three</button>
-      </div>
+    <div className="flex flex-col items-center">
+      <Widget1 />
+      <Widget2 />
     </div>
   )
 }
