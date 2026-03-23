@@ -7,7 +7,7 @@ const Widget1 = () => {
 
     const [showIcon, setShowIcon] = useState(false)
 
-
+ 
     return (
         <div className='bg-green-100 border border-green-300 p-4 rounded-lg m-4 flex flex-col justify-center items-center'>
             {showIcon ? <i className="fa-solid fa-eye text-teal-500 text-3xl mb-4"></i> : null}

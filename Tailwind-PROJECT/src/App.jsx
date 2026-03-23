@@ -111,7 +111,6 @@ import MyComponent from "./MyComponent";
 
 // export default App;
 
-
 // const App = () => {
 //   return (
 //     <div>
@@ -131,7 +130,6 @@ import MyComponent from "./MyComponent";
 //         <div className="text-green border-y-8 border-violet-700">three</div>
 //       </div> */}
 
-
 //       <button className="border-2 border-green-600 text-green-400 px-8 py-2 m-4 rounded-md">
 //         first
 //       </button>
@@ -146,10 +144,8 @@ import MyComponent from "./MyComponent";
 // }
 // export default App
 
-
 // Tailwind classnames
 // const App = () => {
-
 
 //   const boolean = false;
 
@@ -158,16 +154,12 @@ import MyComponent from "./MyComponent";
 
 //     <div className={`${boolean ? "bg-orange-600" : "bg-blue-500"} text-white`}>
 
-
 //         todo
 //       </div>
 //       )
 // }
 
 //       export default App
-
-
-
 
 // Button Exercises
 
@@ -185,7 +177,6 @@ import MyComponent from "./MyComponent";
 
 // export default App
 
-
 // import FancyButton from "./FancyButton";
 
 // const App = () => {
@@ -198,7 +189,6 @@ import MyComponent from "./MyComponent";
 // }
 
 // export default App
-
 
 //   Flex-Column
 
@@ -216,7 +206,6 @@ import MyComponent from "./MyComponent";
 
 // export default App
 
-
 // Tailwind Docs
 
 // import React from 'react'
@@ -232,13 +221,11 @@ import MyComponent from "./MyComponent";
 
 // export default App
 
-
 // Layout exercise
 
 // import Layout from "./Layout";
 // import Layout2 from "./Layout2";
 // import Layout3 from "./Layout3";
-
 
 // const quote1 = {
 //   text: "One of my most productive days was throwing away 1000 lines of code.",
@@ -258,7 +245,6 @@ import MyComponent from "./MyComponent";
 //   bio: "Pionner of Algorithm Analysis",
 // };
 
-
 // import Header from "./Header";
 // import Search from "./Search";
 // import Footer from "./Footer";
@@ -274,7 +260,6 @@ import MyComponent from "./MyComponent";
 // }
 
 // export default App
-
 
 // Click event exercise
 // import { useState } from "react";
@@ -311,17 +296,83 @@ import MyComponent from "./MyComponent";
 
 // export default App
 
+// import Widget1 from "./Widget1";
+// import Widget2 from "./Widget2";
+// import Widget3 from "./Widget3";
 
-import Widget1 from "./Widget1";
-import Widget2 from "./Widget2";
+// const App = () => {
+//   return (
+//     <div className="flex flex-col items-center">
+//       <Widget1 />
+//       <Widget2 />
+//       <Widget3/>
+//     </div>
+//   )
+// }
+
+// export default App
+
+// import { useState } from "react";
+
+// const App = () => {
+//   const [count, setCount] = useState(0);
+
+//   return (
+//     <div className="text-4xl h-screen flex justify-center items-center">
+//       <button
+//         className="text-white w-8 rounded-md text-4xl bg-red-400"
+//         onClick={() => {
+//           setCount(count - 1);
+//         }}
+//       >
+//         -
+//       </button>
+//       <div className="m-4 text-neutral-600">{count}</div>
+//       <button
+//         className="text-white w-8  rounded-md bg-emerald-400"
+//         onClick={() => {
+//           setCount(count + 1);
+//         }}
+//       >
+//         +
+//       </button>
+//     </div >
+//   );
+// };
+
+// export default App;
+
+import { useState } from "react";
 
 const App = () => {
-  return (
-    <div className="flex flex-col items-center">
-      <Widget1 />
-      <Widget2 />
-    </div>
-  )
-}
+  const [isOn, setIsOn] = useState(false);
 
-export default App
+  return (
+    <div
+      className={`flex justify-center h-screen items-center ${isOn ? "bg-yellow-200" : "bg-slate-600"}`}
+    >
+      <button
+        className="cursor-pointer"
+        onClick={
+          () => setIsOn(!isOn)
+          //   {
+          //   if (isOn) {
+          //     setIsOn(false);
+          //   } else {
+          //     setIsOn(true);
+          //   }
+          // }
+        }
+      >
+        <div
+          className={`h-8 w-6 ${isOn ? "bg-slate-400" : "bg-slate-200"}`}
+        ></div>
+        <div
+          className={`h-8 w-6 ${isOn ? "bg-slate-200" : "bg-slate-400"}`}
+        ></div>
+      </button>
+    </div>
+  );
+};
+
+export default App;
