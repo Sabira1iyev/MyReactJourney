@@ -342,37 +342,130 @@ import MyComponent from "./MyComponent";
 
 // export default App;
 
+// import { useState } from "react";
+
+// import clsx from 'clsx';
+
+// const App = () => {
+//   const [isOn, setIsOn] = useState(false);
+
+//   return (
+//     <div
+//       className={clsx("flex justify-center h-screen items-center",
+//         isOn ? "bg-yellow-200" : "bg-slate-600")}
+//     >
+//       <button
+//         className="cursor-pointer"
+//         onClick={
+//           () => setIsOn(!isOn)
+//           //   {
+//           //   if (isOn) {
+//           //     setIsOn(false);
+//           //   } else {
+//           //     setIsOn(true);
+//           //   }
+//           // }
+//         }
+//       >
+//         <div
+//           className={clsx("h-8 w-6"
+//             , isOn ? "bg-slate-400" : "bg-slate-200")}
+//         ></div>
+//         <div
+//           className={clsx("h-8 w-6 $",
+//             isOn ? "bg-slate-200" : "bg-slate-400")}
+//         ></div>
+//       </button>
+//     </div>
+//   );
+// };
+
+// export default App;
+
+// import { useState } from "react";
+
+// import dog1 from './assets/dog1.png'
+// import dog2 from './assets/dog2.png'
+// import dog3 from './assets/dog3.png'
+// import dog4 from './assets/dog4.png'
+// import dog5 from './assets/dog5.png'
+
+
+// const Images = [
+//   dog1,
+//   dog2,
+//   dog3,
+//   dog4,
+//   dog5
+// ]
+
+// const App = () => {
+
+//   const [imageIndex, setImageIndex] = useState(2);
+
+//   return (
+//     <div className="flex flex-col items-center justify-center mt-8">
+//       <div className="text-cyan-400 text-2xl font-bold">{`Dog ${imageIndex + 1}`}</div>
+//       <div className="flex justify-center items-center">
+//         <button onClick={() => {
+//           if(imageIndex > 0){
+//           setImageIndex(imageIndex - 1)
+//           }
+//         }}
+//           className="bg-orange-400 rounded-full w-8 h-8 text-orange-100">
+//           <i className="fa-solid fa-chevron-left"></i>
+//         </button>
+//         <img className=" m-8 rounded-lg w-[200px] h-[300px] object-cover"
+//           src={Images[imageIndex]} />
+//         <button onClick={() => {
+//           if (imageIndex < Images.length - 1) {
+//             setImageIndex(imageIndex + 1)
+//           }
+//         }}
+//           className="bg-orange-400 rounded-full w-8 h-8 text-orange-100">
+//           <i className="fa-solid fa-chevron-right"></i>
+//         </button>
+//       </div>
+//     </div>
+//   )
+// }
+
+// export default App
+
+
+import CATS from "./cats";
+import CatCard from "./CatCard";
+import NavButton from "./NavButton";
 import { useState } from "react";
 
+
+
+
+
 const App = () => {
-  const [isOn, setIsOn] = useState(false);
+
+  const [catIdx, setCatIdx] = useState(2);
 
   return (
-    <div
-      className={`flex justify-center h-screen items-center ${isOn ? "bg-yellow-200" : "bg-slate-600"}`}
-    >
-      <button
-        className="cursor-pointer"
-        onClick={
-          () => setIsOn(!isOn)
-          //   {
-          //   if (isOn) {
-          //     setIsOn(false);
-          //   } else {
-          //     setIsOn(true);
-          //   }
-          // }
-        }
-      >
-        <div
-          className={`h-8 w-6 ${isOn ? "bg-slate-400" : "bg-slate-200"}`}
-        ></div>
-        <div
-          className={`h-8 w-6 ${isOn ? "bg-slate-200" : "bg-slate-400"}`}
-        ></div>
-      </button>
+    <div className="flex justify-center items-center">
+      <NavButton
+        icon="fa-chevron-left"
+        show={catIdx > 0}
+        onClick={() => {
+          setCatIdx(catIdx - 1);
+        }} />
+
+      <CatCard cat={CATS[catIdx]} />
+
+      <NavButton
+        icon="fa-chevron-right"
+        show={catIdx < CATS.length - 1}
+        onClick={() => {
+          setCatIdx(catIdx + 1);
+        }}
+         />
     </div>
   );
 };
 
-export default App;
+export default App
