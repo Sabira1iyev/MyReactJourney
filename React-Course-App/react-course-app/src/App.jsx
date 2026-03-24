@@ -1,14 +1,17 @@
 import { useState } from 'react'
-
 import './App.css'
+import SignUpForm from './SignUpForm'
+
+
 
 function App() {
-  const [count, setCount] = useState(0)
+
+
 
   return (
-    <>
-    
-    </>
+    <div className='flex justify-center items-center h-screen'>
+      <SignUpForm />
+    </div>
   )
 }
 
