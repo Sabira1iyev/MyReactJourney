@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 
 
-function Home({ codeContent }) {
+function Home({ codeContent, aboutMe }) {
 
   const [text, setText] = useState("");
   useEffect(() => {
@@ -14,12 +14,50 @@ function Home({ codeContent }) {
     return () => clearInterval(interval);
   }, [codeContent])
 
+  const [nameLetter, setNameLetter] = useState("");
+
+  useEffect(() => {
+    let letterIndex = 0;
+    let isDeleting = false;
+
+    const type = () => {
+      if (!isDeleting) {
+        setNameLetter(aboutMe.slice(0, letterIndex));
+        letterIndex++;
+
+        if (letterIndex > aboutMe.length) {
+          isDeleting = true;
+          setTimeout(type, 1000);
+          return;
+        }
+      }
+      else {
+        setNameLetter(aboutMe.slice(0, letterIndex));
+          letterIndex--
+          if (letterIndex < 0) {
+            isDeleting = false;
+            setTimeout(type, 800);
+            return;
+          }
+        }    
+        // setTimeout(type, isDeleting ? 100 : 80);
+      };
+    
+    const timeout = setTimeout(type, 30);
+    return () => clearTimeout(timeout);
+  }, [aboutMe]);
+
   return (
     <>
       <div className="w-full mt-[50px] flex justify-center items-center
-      flex-col p-5 gap-[50px]">
+      flex-col p-3 gap-[50px]">
         <div className="flex items-center justify-center bg-transparent rounded-[18px]
-        px-5 border border-[#81818175] shadow-[10px_5px_50px_#0c3ddd]">
+        px-5 border border-[#81818175]" style={{
+            background: "linear-gradient(#0f1535, #0f1535) padding-box, linear-gradient(135deg, #2d2fbd, #0a2a88) border-box",
+            border: "1px solid transparent",
+            borderRadius: "18px",
+            boxShadow: "0px 0px 30px 5px #2d2fbd55"
+          }}>
           <pre className="w-full overflow-x-auto text-sm">
             <code className="whitespace-pre-wrap break-all">
               {text}
@@ -30,7 +68,8 @@ function Home({ codeContent }) {
         text-center text-lg leading-[35px] font-bold">
           <div className="name-container">
             <h2 className="text-2xl">
-              HI, <span className="text-blue-500">SABIR</span> IS HERE
+              {nameLetter}
+              {/* HI, <span className="text-blue-500">SABIR</span> IS HERE */}
             </h2>
           </div>
 
