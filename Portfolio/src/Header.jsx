@@ -41,10 +41,10 @@ function Header() {
                 #0f1535
             `
           }}>
-          <a href="#" className="text-1xl font-bold">Home</a>
-          <a href="#" className="text-1xl font-bold">About</a>
-          <a href="#" className="text-1xl font-bold">Skills</a>
-          <a href="#" className="text-1xl font-bold">Projects</a>
+          <a href="#home" onClick={() => setIsOpen(false)} className="text-1xl font-bold">Home</a>
+          <a href="#about" onClick={() => setIsOpen(false)} className="text-1xl font-bold">About</a>
+          <a href="#skills" onClick={() => setIsOpen(false)} className="text-1xl font-bold">Skills</a>
+          <a href="#projects" onClick={() => setIsOpen(false)} className="text-1xl font-bold">Projects</a>
         </nav>
       </header>
     </>

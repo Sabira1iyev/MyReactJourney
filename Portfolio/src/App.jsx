@@ -2,6 +2,7 @@ import Header from "./Header";
 import Home from "./Home";
 import About from "./About";
 import Skills from "./Skills";
+import Projects from "./Projects";
 import { useState } from "react";
 
 import "./App.css";
@@ -38,6 +39,7 @@ int main() {
       <Home codeContent={cppCode} aboutMe={about} />
       <About />
       <Skills />
+      <Projects />
     </div>
   );
 }

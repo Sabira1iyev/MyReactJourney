@@ -4,9 +4,14 @@ import { useEffect, useState } from "react";
 function Home({ codeContent, aboutMe }) {
 
   const [text, setText] = useState("");
+  const [nameLetter, setNameLetter] = useState("");
+
+
   useEffect(() => {
     let index = 0;
-    const interval = setInterval(() => {
+    let interval;
+
+    interval = setInterval(() => {
       setText(codeContent.slice(0, index));
       index++;
       if (index > codeContent.length) clearInterval(interval);
@@ -14,41 +19,43 @@ function Home({ codeContent, aboutMe }) {
     return () => clearInterval(interval);
   }, [codeContent])
 
-  const [nameLetter, setNameLetter] = useState("");
 
   useEffect(() => {
     let letterIndex = 0;
     let isDeleting = false;
+    let currentTimer;
+
 
     const type = () => {
+      setNameLetter(aboutMe.slice(0, letterIndex));
       if (!isDeleting) {
-        setNameLetter(aboutMe.slice(0, letterIndex));
-        letterIndex++;
-
-        if (letterIndex > aboutMe.length) {
+        if (letterIndex < aboutMe.length) {
+          letterIndex++;
+          currentTimer = setTimeout(type, 80);
+        }
+        else {
           isDeleting = true;
-          setTimeout(type, 1000);
-          return;
+          currentTimer = setTimeout(type, 1000);
         }
       }
       else {
-        setNameLetter(aboutMe.slice(0, letterIndex));
-          letterIndex--
-          if (letterIndex < 0) {
-            isDeleting = false;
-            setTimeout(type, 800);
-            return;
-          }
-        }    
-        // setTimeout(type, isDeleting ? 100 : 80);
-      };
-    
-    const timeout = setTimeout(type, 30);
-    return () => clearTimeout(timeout);
+        if (letterIndex > 0) {
+          letterIndex--;
+          currentTimer = setTimeout(type, 100);
+        }
+        else {
+          isDeleting = false;
+          currentTimer = setTimeout(type, 500);
+        }
+      }
+    };
+
+    currentTimer = setTimeout(type, 30);
+    return () => clearTimeout(currentTimer);
   }, [aboutMe]);
 
   return (
-    <>
+    <div id="home">
       <div className="w-full mt-[50px] flex justify-center items-center
       flex-col p-3 gap-[50px]">
         <div className="flex items-center justify-center bg-transparent rounded-[18px]
@@ -73,13 +80,21 @@ function Home({ codeContent, aboutMe }) {
             </h2>
           </div>
 
-          <p>
+          <p className="text-xl font-bold">
             Software Engineer focused on secure and scalable systems.
             Passionate about clean code and continuous learning.
           </p>
         </div>
         <button
-          className="sayHi-button bg-blue-600 text-white rounded-full w-40 h-12 flex justify-center items-center"
+          className="text-white rounded-full w-40 h-12 flex justify-center items-center font-bold text-xl
+           hover:scale-110 transition-all duration-200 ease-in-out"
+          style={{
+            background: "linear-gradient(#0f1535, #002e85ff) padding-box, linear-gradient(135deg, #2d2fbd, #0a2a88) border-box",
+            border: "1px solid transparent",
+            borderRadius: "18px",
+            boxShadow: "0px 0px 30px 5px #2d2fbd55"
+
+          }}
           onClick={() => {
             window.location.href = "mailto:s.aliyev2005@gmail.com";
           }}
@@ -87,7 +102,7 @@ function Home({ codeContent, aboutMe }) {
           SAY HI
         </button>
       </div>
-    </>
+    </div>
   );
 }
 
